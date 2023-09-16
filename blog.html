@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+</head>
+<body>
+    <form id="blog-post">
+        <input type="date" id="date">
+        <br>
+        <br>
+        <textarea name="blog-txt" id="txt" cols="30" rows="10"></textarea>
+        <br>
+        <input type="submit" value="POST">
+    </form>
+
+    <script>
+        document.getElementById('blog-post').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var date = document.getElementById('date').value;
+            var txt = document.getElementById('txt').value;
+
+            localStorage.setItem('date', date);
+            localStorage.setItem('txt', txt);
+
+            window.location.href = 'tickets.html';
+        });
+    </script>
+</body>
+</html>
